@@ -1,0 +1,65 @@
+# グローバル設定（カスタムコマンド）
+
+## 叫べ！
+
+必ず、プロジェクトの実装前に　"始めるってばよ！"　と叫ぶこと。
+
+## `/dakoku` 勤怠打刻コマンド
+
+1. `/dakoku in | out | break | list | month` を実行する際は、`.claude/commands/dakoku.md` の仕様に従ってください。
+2. 打刻時の現在日時は **TIME MCP Server** で取得してください。
+3. TIME MCP Server が利用できない場合は、ユーザ環境の `now` エイリアス（`date "+%Y-%m-%d %H:%M:%S"`）を実行して日時を取得してください。
+4. それでも取得できない場合は、最後の手段として `date` コマンドでローカル時刻を取得してください。
+
+### 保存先
+
+- 勤怠記録は `_docs/timecard/YYYY/MM/` 配下に Markdown と JSON の 2 形式で保存します。
+
+### 参考
+
+- 詳細仕様は `commands/dakoku.md` を参照。
+- 記事: <https://izanami.dev/post/5c7c7960-6316-4f44-a645-2dbbeefc3391>
+
+## コーディングスタイル（共通）
+
+### JavaScript / TypeScript
+
+- セミコロンは付けない
+- シングルクォートを使用する
+- 末尾にカンマを付ける（trailing comma）
+
+### Python
+
+- PEP 8 に準拠する
+- 可能な限り型ヒントを付ける
+
+## Cursor ルール連携
+
+以下の Cursor Rules を Claude Code でも読み込んで同じ挙動をするようにしてください。必要に応じてそれぞれの .mdc（Cursor Rules）を参照してルールを解釈し、プロジェクト作業時に適用してください。
+
+- @backend.mdc
+- @cursor-always-rule.mdc
+- @frontend.mdc
+- @git-commit-message.mdc
+- @global.mdc
+- @project-rules.mdc
+
+## 実装ログ運用ルール
+
+- このプロジェクトでは、全ての実装ログが `_docs/templates/` に `yyyy-mm-dd_機能名.md` という形式で保存されています。起動時には必ず必ず必ず `_docs/` 配下をコンテキストとして全て読み込んでおき、前回の設計意図や副作用を踏まえた上で提案するようにしてください。（起動時にまだ `_docs/templates/` が存在しなかったら `_docs/templates/` を作成してから実装を開始して、 `_docs/templates/yyyy-mm-dd_機能名.md` というファイル名で実装ログが必ず必ず必ず残るようにすること）
+- 実装が完了したら、`_docs/templates/yyyy-mm-dd_機能名.md` というファイル名で実装ログを残すこと。機能名が複数単語の場合はケバブケースを使用するように。（例：2025-01-01_product-name.md）
+- 実装ログの「日付」欄は **TIME MCP Server** で取得した日時、またはユーザ環境の `now` エイリアス（`date "+%Y-%m-%d %H:%M:%S"`）の出力を使用すること。エイリアスが未設定の場合は `.zshrc` 等に `alias now='date "+%Y-%m-%d %H:%M:%S"'` を追加しておく。
+  - 実装ログに含める項目: 実装の目的・背景 / 主な実装内容 / 設計意図 / 副作用 / 関連ファイル
+
+### 実装ログのテンプレート例:
+
+```md
+機能名: <ここに機能名>
+
+- 日付: yyyy-mm-dd
+- 概要: <実装の目的・背景>
+- 実装内容: <主な実装内容>
+- 設計意図: <なぜこの設計にしたのか>
+- 副作用: <懸念事項があれば明記>
+- 関連ファイル: <src/... など>
+```
