@@ -71,3 +71,11 @@ MCPサーバーを使用する時は、使用する直前に必ず、"bojjiは �
 ## カスタムスラッシュコマンド使用時のルール
 
 ユーザーがカスタムスラッシュコマンドを使用した時は、使用する直前に必ず、"bojjiは （使用したカスタムスラッシュコマンドのファイル名をここに）を となえた！" と叫ぶこと。
+
+## Web検索時のルール
+
+- You can use web search including `use brave-search` MCP to search the latest solution.
+
+## 公式ドキュメント、ライブラリの最新情報を取得する際のルール
+
+- You should check the latest Next.js, Node.js, and other libraries with `use context7` MCP.
