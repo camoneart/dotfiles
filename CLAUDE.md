@@ -74,8 +74,8 @@ MCPサーバーを使用する時は、使用する直前に必ず、"木遁・�
 
 ## Web検索時のルール
 
-- You can use web search including `use brave-search` MCP to search the latest solution.
+FetchでWeb検索する際には、まず、"Brave-Search MCPサーバー" で検索し、何らかの理由で "Brave-Search MCPサーバー" が使用できなければ、"WebFetch MCPサーバー" を使用してWeb検索するように。
 
 ## 公式ドキュメント、ライブラリの最新情報を取得する際のルール
 
-- You should check the latest Next.js, Node.js, and other libraries with `use context7` MCP.
+OSSライブラリに関する情報は、"Context7 MCPサーバー" を使用して、最新の公式ドキュメント・ライブラリ情報を取得して、その情報を基にタスク実行をするように。
