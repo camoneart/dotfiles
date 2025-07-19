@@ -230,6 +230,10 @@ OSS ライブラリに関する情報は、"Context7 MCP サーバー" を使用
    ```md
    shadcn@2.9.0
 
+   ### Major Changes
+
+   - #7780 123abcd Thanks @shadcn! - implement registry synchronization
+
    ### Minor Changes
 
    - #7782 06d03d6 Thanks @shadcn! - add universal registry items support
