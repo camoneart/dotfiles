@@ -59,6 +59,14 @@ MCP サーバーを使用する時は、使用する直前に必ず、"木遁・
 
 ユーザーがカスタムスラッシュコマンドを使用した時は、使用する直前に必ず、"木遁・（使用したカスタムスラッシュコマンドのファイル名をここに）の術！！" と叫ぶこと。
 
+## Maestro MCP サーバー使用時のルール
+
+Maestro MCP サーバー（Git worktree管理）を使用する際は、必ず以下のドキュメントを参照すること：
+- 公式ドキュメント: https://deepwiki.com/camoneart/maestro
+- GitHubリポジトリ: https://github.com/camoneart/maestro
+
+これらのドキュメントで最新の使用方法や注意事項を確認してから実行すること。
+
 ## Web 検索時のルール
 
 Fetch で Web 検索する際には、まず、"Brave-Search MCP サーバー" で検索し、何らかの理由で "Brave-Search MCP サーバー" が使用できなければ、"WebFetch MCP サーバー" を使用して Web 検索するように。
