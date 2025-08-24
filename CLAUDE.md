@@ -1,5 +1,9 @@
 # グローバル設定（カスタムコマンド）
 
+## Speak in Japanese
+
+必ず必ず必ず日本語で話してください。
+
 ## 叫べ！
 
 必ず、タスクの実行前に　"始めるってばよ！🍥"　と叫ぶこと。
@@ -271,3 +275,40 @@ OSS ライブラリに関する情報は、"Context7 MCP サーバー" を使用
 - **リファクタリング時**: 段階的変更、既存動作の保持、テストでの検証
 - **レビュー・分析時**: セキュリティ、パフォーマンス、設計パターンの観点
 - **TDD実装時**: 期待する入出力ペアに基づくテスト作成 → 失敗確認 → テストコミット → 実装 → コードコミットの順序を厳守。TDD実行を明示し既存テスト変更禁止、過剰適合防止のため独立検証も実施
+
+## Next.js プロジェクトセットアップルール
+
+Next.jsプロジェクトのセットアップ時には、必ず以下の設定を行うこと：
+
+1. **ESLint + Prettier の必須インストール**
+   - ESLintは通常Next.jsで自動インストールされるが、**Prettierも必ず追加インストール**すること
+   - インストールコマンド: `pnpm add -D prettier eslint-config-prettier prettier-plugin-tailwindcss`
+
+2. **設定ファイルの作成**
+   - `.prettierrc.json` を以下のテンプレートで作成：
+   ```json
+   {
+     "semi": true,
+     "singleQuote": true,
+     "trailingComma": "es5",
+     "tabWidth": 2,
+     "useTabs": false,
+     "printWidth": 100,
+     "bracketSpacing": true,
+     "arrowParens": "always"
+   }
+   ```
+   - `.eslintrc.json` に `eslint-config-prettier` を追加して、ESLintとPrettierの競合を防ぐ
+
+3. **package.json スクリプトの追加**
+   ```json
+   {
+     "scripts": {
+       "format": "prettier --write .",
+       "format:check": "prettier --check ."
+     }
+   }
+   ```
+
+4. **VS Code 設定の推奨**
+   - `.vscode/settings.json` に自動フォーマット設定を追加することを推奨
