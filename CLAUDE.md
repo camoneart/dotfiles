@@ -81,10 +81,12 @@ OSS ライブラリに関する情報は、"Context7 MCP サーバー" を使用
 
 ## テスト駆動開発（TDD：Test-Driven Development）を行う
 
-プロジェクト（プロダクト、アプリ、サイト etc...）の開発時には、必ず以下の記事を参考にして「テスト駆動開発」を行うこと。
+プロジェクト（プロダクト、アプリ、サイト etc...）の開発時には、必ず以下の参考記事を参考にして「テスト駆動開発」を行うこと。
 
-参考記事：[テスト駆動開発（TDD：Test-Driven Development）を学ぶ
-](https://zenn.dev/hashiramaendure/articles/5a077132f34e5d)
+### 参考記事
+- [【翻訳】テスト駆動開発の定義](https://t-wada.hatenablog.jp/#%E3%82%B9%E3%83%86%E3%83%83%E3%83%972-%E3%81%B2%E3%81%A8%E3%81%A4%E3%83%86%E3%82%B9%E3%83%88%E3%82%92%E6%9B%B8%E3%81%8F)
+- [保守しやすく変化に強いソフトウェアを支える柱　自動テストとテスト駆動開発⁠⁠、その全体像](https://gihyo.jp/article/2024/01/automated-test-and-tdd)
+- [テスト駆動開発（TDD：Test-Driven Development）を学ぶ](https://zenn.dev/camoneart/articles/9ff099c724b421)
 
 ### TDD の開発手順
 
