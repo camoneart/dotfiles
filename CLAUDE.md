@@ -59,7 +59,7 @@ Maestro MCP サーバー（Git worktree管理）を使用する際は、必ず�
 
 ## 実装ログについて
 
-タスク完了後は、毎回 skill：logging-implementation を使って実装ログを残すように。
+タスク完了後は、毎回 skill：logging-implementation を使って実装ログを必ず必ず必ず必ず必ず残すように。
 
 プロジェクトの `_doc/templates/` 配下に保存される実装ログは、ローカル作業記録用のファイルであり、.gitignore により Git の追跡対象外となっている。これらのファイルはリポジトリにコミットせず、個人の作業履歴として管理すること。
 
