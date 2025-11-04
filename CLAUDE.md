@@ -57,6 +57,12 @@ Maestro MCP サーバー（Git worktree管理）を使用する際は、必ず�
 
 これらのドキュメントで最新の使用方法や注意事項を確認してから実行すること。
 
+## 実装ログについて
+
+タスク完了後は、毎回 skill：logging-implementation を使って実装ログを残すように。
+
+プロジェクトの `_doc/templates/` 配下に保存される実装ログは、ローカル作業記録用のファイルであり、.gitignore により Git の追跡対象外となっている。これらのファイルはリポジトリにコミットせず、個人の作業履歴として管理すること。
+
 ## Cursor Rules 連携（プロジェクトに ".cursor/" がある場合）
 
 以下の Cursor Rules を Claude Code でも読み込んで同じ挙動をするようにしてください。必要に応じてそれぞれの .mdc（Cursor Rules）を参照してルールを解釈し、プロジェクト作業時に適用してください。
@@ -70,7 +76,7 @@ Maestro MCP サーバー（Git worktree管理）を使用する際は、必ず�
 
 ## Claude Code ベストプラクティス準拠
 
-各タスクの着手前に、必ず https://www.anthropic.com/engineering/claude-code-best-practices を参照し、実行するタスクの性質（コード生成、リファクタリング、デバッグ、テスト追加等）に応じて適切なベストプラクティスを適用すること。
+各タスクの着手前に、必ず必ず必ず https://www.anthropic.com/engineering/claude-code-best-practices を参照し、実行するタスクの性質（コード生成、リファクタリング、デバッグ、テスト追加等）に応じて適切なベストプラクティスを適用すること。
 
 ### タスク別適用例
 - **新機能実装時**: コード品質、保守性、テスタビリティを重視
@@ -79,26 +85,19 @@ Maestro MCP サーバー（Git worktree管理）を使用する際は、必ず�
 - **レビュー・分析時**: セキュリティ、パフォーマンス、設計パターンの観点
 - **TDD実装時**: 期待する入出力ペアに基づくテスト作成 → 失敗確認 → テストコミット → 実装 → コードコミットの順序を厳守。TDD実行を明示し既存テスト変更禁止、過剰適合防止のため独立検証も実施
 
-## Skills による機能分割
+## Claude Code on the Webについて
 
-以下の機能は `.claude/skills/` 配下の Skills として管理されています。詳細は各 Skill の SKILL.md を参照してください。
+コンテキスト残量をタスク完了後に毎回教えて。
 
-### 開発ワークフロー Skills
-- **Managing Timecard**: 勤怠打刻機能（`/dakoku` コマンド）
-- **Logging Implementation**: 実装ログ運用ルール
-- **Enforcing Git Commit Workflow**: Gitコミット運用ルール
-- **Practicing TDD**: テスト駆動開発（TDD）フロー
-- **Enforcing pnpm**: パッケージマネージャー統一ルール
+### 例
+🧪 コンテキスト：使用済み 〇〇K / 残り 〇〇K（〇〇％残）
 
-### 情報収集・処理 Skills
-- **Searching Intelligently**: 検索対象に応じて最適なSearch MCPを自動選択
-- **Searching Web**: Web検索戦略（Brave-Search優先フォールバック）
-- **Translating Technical Articles**: 英語技術記事を日本語Markdownに翻訳
+## コードの修正について
+コードを修正した際、コメントアウトは残してもいいが、絵文字はコメントアウトに含めないこと。
 
-### プロジェクトセットアップ Skills
-- **Setting up Next.js Project**: Next.jsプロジェクトセットアップルール
+### コメントアウトのルール
+- 絵文字は含めない
 
-### メタ Skills（Skill管理）
-- **Creating Agent Skills**: 新しいSkillを作成するためのガイドとワークフロー
-
-各Skillは必要に応じて自動的に発動します。
+#### 例：
+- 悪い例：✅ Request Memoization: 同一リクエスト内で1回のみ実行
+- 良い例：Request Memoization: 同一リクエスト内で1回のみ実行
